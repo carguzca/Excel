@@ -1,0 +1,13 @@
+    Public Function GetNameFile() As String
+        Dim filedialog As OpenFileDialog = New OpenFileDialog()
+        sNombreArchivo = ""
+        filedialog.Title = "Select the file: "
+        filedialog.RestoreDirectory = True
+        filedialog.Filter = "Excel (*.xls;*.xlsx)|*.xls;*.xlsx|All files (*.*)|*.*"
+        If filedialog.ShowDialog() = DialogResult.OK Then
+            sNombreArchivo = filedialog.FileName
+        Else
+            sNombreArchivo = ""
+        End If
+        Return sNombreArchivo
+    End Function
